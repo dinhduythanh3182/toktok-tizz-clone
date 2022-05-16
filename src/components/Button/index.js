@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
@@ -16,9 +17,11 @@ function Button({
     children,
     className,
     onClick,
+    leftIcon,
+    rightIcon,
     ...passProps
 }) {
-    const classes = cx('wrapper',className,size, {
+    const classes = cx('wrapper', className, size, {
         primary,
         outline,
         text,
@@ -30,13 +33,13 @@ function Button({
         onClick,
         ...passProps,
     };
-// REMOVE EVENTS WHEN BUTTON DISABLED
-    if(disabled) {
-        Object.keys(props).forEach((key)=>{
-            if(key.startsWith("on") &&typeof props[key]==='function'){
+    // REMOVE EVENTS WHEN BUTTON DISABLED
+    if (disabled) {
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
                 delete props[key];
             }
-        })
+        });
     }
     if (to) {
         props.to = to;
@@ -47,7 +50,10 @@ function Button({
     }
     return (
         <Comp className={classes} {...props}>
-            <span>{children}</span>
+            {leftIcon&& <FontAwesomeIcon className={cx('icon')} icon={leftIcon}/>}
+            {/* {leftIcon && <div className={cx('icon')}>{leftIcon}</div>} */}
+            <span className={cx('content')}>{children}</span>
+            {rightIcon&& <FontAwesomeIcon className={cx('icon')} icon={rightIcon}/>}
         </Comp>
     );
 }
