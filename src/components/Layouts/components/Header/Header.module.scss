@@ -87,15 +87,32 @@
     font-weight: 600;
     padding: 5px 12px;
 }
+// actions
+.actions{
+    display: flex;
+    align-items: center;
+}
+.action-btn{    
+    font-size: 2.4rem;
+    color: #161823;
+    background-color:transparent;
+    padding: 4px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.user-avatar{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    object-fit: cover;
+    margin-left: 18px;
+    cursor: pointer;
+}
 .more-btn{
     font-size: 2rem;
-    // margin-left:  28px;
     padding: 4px 22px;
     background-color:transparent;
     cursor: pointer;
 }
 
-// Menu Items
-.menu-items{
-    width: 224px;
-}

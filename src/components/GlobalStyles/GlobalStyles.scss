@@ -1,12 +1,8 @@
-@import 'normalize.css';
-// @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&family=Nunito+Sans&family=Roboto:ital,wght@0,300;0,400;1,300&family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
-
 :root {
     --primary: #fe2c55;
     --black: #000;
     --white: #fff;
-    --text-color: #333;
+    --text-color: #161823;
     // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
@@ -23,11 +19,34 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'ProximaNova', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
+// FONTS emmbeded
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-bold.woff');
+    // src: url('/assets/fonts/sofiapro-bold.woff');
+    font-weight: 700;
+}
+// end fonts
 
 button,
 input,
@@ -39,4 +58,21 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// custom Tippy
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-content {
+        padding: 8px 9px;
+    }
 }

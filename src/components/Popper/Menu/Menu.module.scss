@@ -10,6 +10,7 @@
 
 // MENU _ ITEMS
 .menu-items{
+    color: var(--text-color);
     display: flex;
     margin-left:0 !important;
     border-radius: 0;
@@ -19,6 +20,13 @@
     line-height: 1.8rem;
     &:hover{
         background-color : rgba(22,24,35,0.03)
+    }
+    &.separate{
+        border-top: 1px solid rgba(22,24,35,0.12);
+    }
+    &:last-child{
+        border-bottom-left-radius :  8xp;
+        border-bottom-right-radius :  8xp;
     }
 }
 
